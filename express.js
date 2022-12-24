@@ -125,8 +125,7 @@ app.post("/students",(req,res)=>{
 
 // UPDATE A STUDENT
 app.post("/students",(req,res)=>{
-    let student=req.body
-    let sql=`SET@id=?,SET @surname=?,SET@firstname=?,SET@age=?,SET@department=?;
+\    let sql=`SET@id=?,SET @surname=?,SET@firstname=?,SET@age=?,SET@department=?;
     CALL student(@id,@surname,@firstname,@age,@department);`;
     mysqlconnection.query(sql,[student.id,student.surname,student.firstname,student.age,student.department],(err,rows,fields)=>{
         if(!err){
